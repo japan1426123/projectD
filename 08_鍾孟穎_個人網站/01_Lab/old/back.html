@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
+    <script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
+    <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
+</head>
+
+<body>
+    <div id="chartHolder" style="width:100%; height:500px;"></div>
+
+    <script>
+        var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+
+        KoolChart.create("chart1", "chartHolder", chartVars, "100%", "100%");
+
+        function chartReadyHandler(id) {
+            document.getElementById(id).setLayout(layoutStr);
+            document.getElementById(id).setData(chartData);
+        }
+
+        var layoutStr =
+            '<KoolChart>'
+            + '<Gauge innerRatio="0.5" nameField="name" valueField="value" backgroundColors="[#ffffff]" foregroundColors="[#D2F8E5,#b0e0e6,#d3d3d3,	#B2B2B2]" minimum="0" maximum="100" startAngle="-90" minimumAngle="0" maximumAngle="270" color="#ffffff" fontSize="20" fontWeight="bold" labelYOffset="2">'
+            + '<backgroundElements>'
+            + '<Box width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">'
+            + '<SubLegend direction="vertical" fontSize="13" color="#666666" borderStyle="none">'
+            + '<LegendItem label="PHP">'
+            + '<fill>'
+            + '<SolidColor color="#D2F8E5"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="Laravel">'
+            + '<fill>'
+            + '<SolidColor color="#b0e0e6"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="RESTful">'
+            + '<fill>'
+            + '<SolidColor color="#d3d3d3"/>'
+            + '</fill>'
+            + '</LegendItem>'
+
+            + '</SubLegend>'
+            + '</Box>'
+            + '</backgroundElements>'
+            + '</Gauge>'
+            + '</KoolChart>';
+
+        var chartData =
+            [{ "name": "PHP", "value": 15 },
+            { "name": "Laravel", "value": 13 },
+            { "name": "RESTful", "value": 10 },
+            ];
+    </script>
+
+</body>
+
+</html

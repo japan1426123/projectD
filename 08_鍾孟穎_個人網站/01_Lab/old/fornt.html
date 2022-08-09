@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
+    <script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
+    <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
+    <link rel="stylesheet" href="../_css/bootstrap.min.css">
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/popper.min.js"></script>
+    <script src="../_js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="row ">
+        <div class="col-2"></div>
+        <div id="chartHolder" style=" height:500px; " class="col-4 "></div>
+        <div id="chartHolder1" style=" height:500px;" class="col-4"></div>
+        <div class="col-2"></div>
+    </div>
+
+
+    <script>
+        var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+        var chartVars1 = "KoolOnLoadCallFunction=chartReadyHandler1";
+
+        KoolChart.create("chart1", "chartHolder", chartVars, "100%", "100%");
+        KoolChart.create("chart2", "chartHolder1", chartVars1, "100%", "100%");
+
+        function chartReadyHandler(id) {
+            document.getElementById(id).setLayout(layoutStr);
+            document.getElementById(id).setData(chartData);
+        }
+        function chartReadyHandler1(id) {
+            document.getElementById(id).setLayout(layoutStr1);
+            document.getElementById(id).setData(chartData1);
+        }
+
+        var layoutStr =
+            '<KoolChart>'
+            + '<Gauge innerRatio="0.5" nameField="name" valueField="value" backgroundColors="[#ffffff]" foregroundColors="[#D2F8E5,#b0e0e6,#d3d3d3,	#B2B2B2]" minimum="0" maximum="100" startAngle="-90" minimumAngle="0" maximumAngle="270" color="#ffffff" fontSize="20" fontWeight="bold" labelYOffset="2">'
+            + '<backgroundElements>'
+            + '<Box width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">'
+            + '<SubLegend direction="vertical" fontSize="13" color="#666666" borderStyle="none">'
+            + '<LegendItem label="網頁設計">'
+            + '<fill>'
+            + '<SolidColor color="#D2F8E5"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="HTML">'
+            + '<fill>'
+            + '<SolidColor color="#b0e0e6"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="CSS">'
+            + '<fill>'
+            + '<SolidColor color="#d3d3d3"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="BootStrap">'
+            + '<fill>'
+            + '<SolidColor color="#B2B2B2"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '</SubLegend>'
+            + '</Box>'
+            + '</backgroundElements>'
+            + '</Gauge>'
+            + '</KoolChart>';
+
+        var chartData =
+            [{ "name": "網頁設計", "value": 100 },
+            { "name": "HTML", "value": 90 },
+            { "name": "CSS", "value": 80 },
+            { "name": "BootStrap", "value": 80 }
+            ];
+
+
+        var layoutStr1 =
+            '<KoolChart>'
+            + '<Gauge innerRatio="0.5" nameField="name" valueField="value" backgroundColors="[#ffffff]" foregroundColors="[#D2F8E5,#b0e0e6,#d3d3d3,	#B2B2B2]" minimum="0" maximum="100" startAngle="-90" minimumAngle="0" maximumAngle="270" color="#ffffff" fontSize="20" fontWeight="bold" labelYOffset="2">'
+            + '<backgroundElements>'
+            + '<Box width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">'
+            + '<SubLegend direction="vertical" fontSize="13" color="#666666" borderStyle="none">'
+            + '<LegendItem label="JavaScript">'
+            + '<fill>'
+            + '<SolidColor color="#D2F8E5"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="jQuery">'
+            + '<fill>'
+            + '<SolidColor color="#b0e0e6"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="React">'
+            + '<fill>'
+            + '<SolidColor color="#d3d3d3"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '<LegendItem label="Vue.js">'
+            + '<fill>'
+            + '<SolidColor color="#B2B2B2"/>'
+            + '</fill>'
+            + '</LegendItem>'
+            + '</SubLegend>'
+            + '</Box>'
+            + '</backgroundElements>'
+            + '</Gauge>'
+            + '</KoolChart>';
+
+        var chartData1 =
+            [{ "name": "JavaScript", "value": 80 },
+            { "name": "jQuery", "value": 75 },
+            { "name": "React", "value": 60 },
+            { "name": "Vue.js", "value": 60 }
+            
+           ];
+    </script>
+
+</body>
+
+</html

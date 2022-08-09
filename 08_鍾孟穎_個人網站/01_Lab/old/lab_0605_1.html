@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鍾孟穎</title>
+
+
+    <link rel="stylesheet" href="../_css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--時間軸 js/css, Copyright (c) 2016 eeyellow-->
+    <link rel="stylesheet" href="../_css/time.css">
+
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/popper.min.js"></script>
+    <script src="../_js/bootstrap.min.js"></script>
+
+    <script src="../_js/time.js"></script>
+    <!--時間軸 js/css-->
+
+
+    <!-- 雷達圖 -->
+    <script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
+    <script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
+    <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
+
+    <script src="../_js/forntChart.js"></script>
+    <script src="../_js/backChart.js"></script>
+    <script src="../_js/otherChart.js"></script>
+    <!-- 雷達圖 -->
+
+
+
+    <script>
+        function FrontClick() {
+            document.getElementById("front-end").classList.remove("visibility");
+            document.getElementById("back-end").classList.add("visibility");
+            document.getElementById("Other").classList.add("visibility");
+        }
+        function BackClick() {
+            document.getElementById("front-end").classList.add("visibility");
+            document.getElementById("back-end").classList.remove("visibility");
+            document.getElementById("Other").classList.add("visibility");
+        }
+        function OtherClick() {
+            document.getElementById("front-end").classList.add("visibility");
+            document.getElementById("back-end").classList.add("visibility");
+            document.getElementById("Other").classList.remove("visibility");
+        }         
+    </script>
+
+
+    <style>
+        .div_nav {
+            background-color: rgba(217, 240, 225, 0.9);
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            background-position: center center;
+        }
+
+        .visibility {
+            visibility: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 所有內容style="width: 100%; height :50px; background-color: rgb(51, 109, 132);" -->
+    <div id="approot">
+
+        <div id="content" style="width: 100%;height :calc(100vh);">
+            <div class="div_nav" style="width: 100%; height :75px;"></div>
+            <!-- 上面的選單 -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top div_nav">
+                <a class="navbar-brand" href="#">
+                    <img src="../_image/meng-gray.png" width="90" height="55">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active ">
+                            <a class="nav-link" href="#aboutme" style="color:DimGray;">簡介<br> About Me</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#Experience" style="color:DimGray;">經歷<br> Experience</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#mySkill" style="color:DimGray;">技能<br> Professional</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#myPortfolio" style="color:DimGray;">作品集<br> Portfolio</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#Appointment" style="color:DimGray;">預約面試<br> Appointment<br></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#contactMe" style="color:DimGray;">聯絡資訊<br> Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- banner底圖 -->
+            <div style="height: auto; min-height: 783px;" class="">
+                <section
+                    style="padding: 0px; height: 783px;background-image: url(../_image/cover.jpg);background-size: cover;background-position:center;">
+                    <div class="row rounded">
+                        <div class="col-4 mt-5 ">
+                            <div class="pl-5 py-4 rounded-lg mt-5"
+                                style='line-height:11px;font-size:15px;color:gray; background: rgba(143, 194, 185, 0.3); '>
+
+                                <h2>鍾孟穎</h2>
+                                <h4><small>Zhong　Meng-Ying</small></h4><br>
+                                <p>憑著一股衝勁</p>
+                                <p>跨出舒適圈</p>
+                                <p>踏進網頁工程的領域</p>
+                                <p>先建一個個人網站來看看</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- 關於我 style="padding: 1rem !important";-->
+            <section style="height: 350px; background-color: rgba(85, 155, 5, 0.16); ">
+                <div id="aboutme" class="row ">
+                    <div class="col-2"></div>
+                    <div class="col-4 p-4">
+                        <img src="../_image/0525-2.jpg" class="  rounded-circle img-thumbnail rounded " width="300"
+                            height="300">
+                    </div>
+                    <div class="col-5 p-4 mt-4 text-truncate" media="min-width:1100px">
+                        <h4>簡介 <small>About Me</small></h4>
+
+                        <p>大學時，學過用Photoshop、Dreamweaver做簡易的網頁，網頁是大學技術課程的一小環，<br>
+
+                        不只網頁課，也把握機會去嘗試各種技能，例如:</p>
+                        <li>獲得家具雜誌的產學合作案，得到技能:Rhino、illustrator</li>
+                        <li>2017年玩具與兒童用品創意設計營，加入專案，見證一個商品的誕生</li>
+                        <li>藉由科技紡織展覽博覽會，進入Sheico Group學習防寒衣打版<br>
+                            &nbsp;&emsp;為了更貼近客戶想法，額外體驗游泳、衝浪、溯溪.</li>
+                        <li>疫情大爆發，回家休息並學習全端工程師新技能</li><br>
+                        <p><small>學習不中斷，學習卡關中，關關難過，關關過</small></p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </section>
+
+
+            <!-- r經歷時間軸 -->
+            <div id="Experience" class="VivaTimeline container">
+                <dl>
+
+                    <!--年份2014 -->
+                    <dt>2014</dt>
+
+                    <!--國靖家具 start-->
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2017</div>
+                        <!--填入日期-->
+                        <div class="events">
+                            <div class="events-header">
+                                <h5>國靖家具裝潢有限公司</h5>
+                            </div>
+                            <!--填入標題-->
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <a href="http://kuoching.com/" target="_blank">
+                                            <img class="events-object img-responsive img-rounded img-fluid"
+                                                src="../_image/KOUCHING.jpg" /></a>
+                                        <!--填入圖片網址-->
+                                    </div>
+                                    <div class="">
+                                        <h6>產學合作案 2017 - 2018 </h6>
+                                        國靖家具裝潢有限公司 <br>
+                                        責任編輯<br>
+                                        美術編輯
+                                        <br><br>
+                                    </div>
+                                    <!--填入描述-->
+                                </div>
+                            </div>
+                    </dd>
+                    <!--國靖家具 end-->
+
+                    <!--除此之外 start-->
+                    <dd class="pos-right clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2018 May</div>
+                        <!--填入日期-->
+                        <div class="events">
+                            <div class="events-header">
+                                <h5>除此之外BeSides</h5>
+                                <p class="blockquote-footer">國立台南藝術大學107畢業展演</p>
+                            </div>
+                            <!--填入標題-->
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <a href="https://sites.google.com/itd.tnnua.edu.tw/tnnuamad9/%E5%B1%95%E8%A6%BD%E7%B0%A1%E4%BB%8B/%E5%83%A5%E5%80%96%E7%BD%AE%E5%85%A5"
+                                            target="_blank">
+                                            <img class="events-object img-responsive img-rounded img-fluid"
+                                                src="../_image/JiaoSing.jpg" /></a>
+                                        <!--填入圖片網址-->
+                                    </div>
+                                    <div class="">
+                                        <h6>除此之外BeSides </h6>
+                                        <h6 class="blockquote-footer">僥倖置入 </h6>
+                                        畢冊編輯、美術設計
+                                    </div>
+                                    <!--填入描述-->
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <!--除此之外 end-->
+
+                    <!--材創畢業 start-->
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2018 Sept</div>
+                        <!--填入日期-->
+                        <div class="events">
+                            <div class="events-header">
+                                <h5>國立台南藝術大學</h5>
+                                <p class="blockquote-footer">材質創作與設計系</p>
+                            </div>
+                            <!--填入標題-->
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <a href="https://materialarts.tnnua.edu.tw/" target="_blank">
+                                            <img class="events-object img-responsive img-rounded img-fluid"
+                                                src="../_image/school.jpg" /></a>
+                                        <!--填入圖片網址-->
+                                    </div>
+                                    <div class="">
+                                        <h6>2014 - 2018 </h6>
+                                        國立台南藝術大學 <br>
+                                        材質創作與設計系 畢業<br>
+                                        主修設計，副修纖維 <br><br><br>
+                                    </div>
+                                    <!--填入描述-->
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <!--材創畢業 end-->
+
+                    <!--年份2018-->
+                    <dt>2018</dt>
+
+                    <!--電腦打版 start-->
+                    <dd class="pos-right clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2018 Mar</div>
+                        <!--填入日期-->
+                        <div class="events">
+                            <div class="events-header">
+                                <div class="events-header">
+                                    <h5>服裝電腦打版</h5>
+                                    <p class="blockquote-footer">畢業再進修</p>
+                                </div>
+                            </div>
+                            <!--填入標題-->
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="col-md-4 pull-left">
+                                        <img class="events-object img-responsive img-rounded img-fluid"
+                                            src="../_image/Pattern-Making.jpg" />
+                                        <!--填入圖片網址-->
+                                    </div>
+                                    <div class="">
+                                        學習服裝打版、布料應用、縫製製作、br
+                                        電腦打版放縮等技術
+                                    </div>
+                                    <!--填入描述-->
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <!--電腦打版 end-->
+
+                    <!--sheico start-->
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2019 Sept</div>
+                        <!--填入日期-->
+                        <div class="events">
+                            <div class="events-header">
+                                <h5>薛長興工業股份有限公司</h5>
+                            </div>
+                            <!--填入標題-->
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="col-md-6 pull-left">
+                                        <a href="https://www.sheico.com.tw/index-tw.php" target="_blank">
+                                            <img class="events-object img-responsive img-rounded img-fluid"
+                                                src="../_image/sheico.jpg" /></a>
+                                        <!--填入圖片網址-->
+                                    </div>
+                                    <div class="">
+                                        <h6>2019 - 2022 </h6>
+                                        潛水衣打版助理 <br>
+                                    </div>
+                                    <!--填入描述-->
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <!--sheico end-->
+
+
+
+                    <!--年份2022-->
+                    <dt>2022 Mar</dt>
+
+                    <!--NOW-->
+                    <dt>NOW</dt>
+
+                </dl>
+                <hr>
+            </div>
+
+            <!-- F/B/O -->
+            <div id="mySkill" class="position-relative d-flex justify-content-center" style="padding: 10px 0px 10px 0px; ">
+                <div id="front-end" class="front-end position-absolute">
+                    <div id="f_skill_text" style="color:gray;">
+                        <h2>FRONT-END</h2>
+                    </div>
+                    <div id="f_skill_chart" >
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div id="f_chartHolder1" style="width:500px; height:500px;" class="col-5"></div>
+                            <div id="f_chartHolder2" style="width:500px; height:500px;" class="col-5"></div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="back-end" class="visibility back-end position-absolute">
+                    <div id="b_skill_text" style="color:gray;">
+                        <h2>BACK-END</h2>
+                    </div>
+                    <div id="b_skill_chart" >
+                        <div id="b_chartHolder1" style="width: 1000px;; height: 500px;"></div>
+                    </div>
+                </div>
+                <div id="Other" class="visibility Other position-absolute">
+                    <div id="o_skill_text" style="color:gray;">
+                        <h2>Other</h2>
+                    </div>
+                    <div id="o_skill_chart" >
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div id="o_chartHolder1" style="width: 500px;; height: 500px;" class="col-5"></div>
+                            <div id="o_chartHolder2" style="width:500px; height:500px;" class="col-5"></div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="skill-btn" style="padding: 550px 10% 0;">
+                    <div class="bg-skill-btn">
+                        <div class="row">
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-outline-secondary btn-lg" style="width: 200px;"
+                                    onclick="FrontClick()">Front-End</button>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-outline-secondary btn-lg" style="width: 200px;"
+                                    onclick="BackClick()">Back-End</button>
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" class="btn btn-outline-secondary btn-lg" style="width: 200px;"
+                                    onclick="OtherClick()">Other</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 輪播 -->
+            <section style="height: 600px; background-color: rgba(217, 240, 225, 0.9); margin: 0px 0px;">
+                <!-- <h1>作品集 TODO</h1> -->
+                <div  id="myPortfolio" class=" p-5 carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myPortfolio" data-slide-to="0" class="active"></li>
+                        <li data-target="#myPortfolio" data-slide-to="1"></li>
+                        <li data-target="#myPortfolio" data-slide-to="2"></li>
+                        <li data-target="#myPortfolio" data-slide-to="3"></li>
+                        <li data-target="#myPortfolio" data-slide-to="4"></li>
+                        <li data-target="#myPortfolio" data-slide-to="5"></li>
+
+                    </ol>
+                    <div class="carousel-inner ">
+                        <div class="carousel-item active ">
+                            <img src="../_image/work/w3.jpg" class="d-block ">
+
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../_image/work/w1.jpg" class="d-block ">
+
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../_image/work/w4.jpg" class="d-block ">
+
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../_image/work/w7.jpg" class="d-block ">
+ 
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../_image/work/w6.jpg" class="d-block ">
+
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../_image/work/w8.jpg" class="d-block ">
+
+                        </div>
+
+
+                    </div>
+                    <a class="carousel-control-prev" href="#myPortfolio" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myPortfolio" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+
+
+            <!-- 面試資訊 -->
+            <div id="Appointment" class="row  p-3 my-5">
+                <div class="col-1 "></div>
+                <div class="col-5">
+                    <h1>Calender 位置 TODO</h1>
+                </div>
+                <div class="col-5">
+                    <form class="was-validated">
+                        <div class="form-group row">
+                            <label for="companyInput" class="col-sm-2 col-form-label">公司</label>
+                            <div class="col-sm-10">
+                                <input type="company" class="form-control is-invalid" id="companyInput" required>
+                                <div class="invalid-feedback">
+                                    請輸入公司名。
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="contactInput" class="col-sm-2 col-form-label">聯絡人</label>
+                            <div class="col-sm-10">
+                                <input type="contact" class="form-control is-invalid" id="contactInput" required>
+                                <div class="invalid-feedback">
+                                    請輸入聯絡人(先生/小姐)。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="telInput" class="col-sm-2 col-form-label">聯絡電話</label>
+                            <div class="col-sm-10">
+                                <input type="telephone" class="form-control is-invalid" id="telInput" required>
+                                <div class="invalid-feedback">
+                                    請輸入聯絡電話(市話/手機)。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="jobTitleInput" class="col-sm-2 col-form-label">職務名稱</label>
+                            <div class="col-sm-10">
+                                <input type="jobTitle" class="form-control is-invalid" id="jobTitleInput" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="salaryInput" class="col-sm-2 col-form-label">待　　遇</label>
+                            <div class="col-sm-10">
+                                <input type="salary" class="form-control is-invalid" id="salaryInput"
+                                    placeholder="面議/年薪/月薪/日薪/時薪" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobDescTextarea">工作內容</label>
+                            <textarea class="form-control is-invalid" id="jobDescTextarea" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobSkillTextarea">技能要求</label>
+                            <textarea class="form-control" id="jobSkillTextarea" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobBenefitTextarea">福　　利</label>
+                            <textarea class="form-control" id="jobBenefitTextarea" rows="2" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary btn-lg">Submit</button>
+                    </form>
+                </div>
+                <div class="col-1 "></div>
+            </div>
+            <!-- 聯絡資訊 -->
+            <div id="footer">
+                <div id="contactMe" style="background-color:rgba(5, 155, 140, 0.16); text-align:center;" class="py-2">
+                    <h4>聯絡資訊</h4>
+                    <h5>
+                        <i class="fa fa-phone" aria-hidden="true">
+                            :09XX-XXX-XXX
+                        </i>
+                    </h5>
+                    <h5>
+                        <i class="fa fa-envelope" aria-hidden="true">
+                            :demo@gmail.com
+                        </i>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //<![CDATA[
+        /*執行時間軸*/
+        $(".VivaTimeline").vivaTimeline();
+        //]]>
+    </script>
+
+
+
+
+</body>
+
+</html>

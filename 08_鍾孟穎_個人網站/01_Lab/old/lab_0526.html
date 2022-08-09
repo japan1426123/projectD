@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../_css/bootstrap.min.css">
+    <script src="../_js/jquery.min.js"></script>
+    <script src="../_js/popper.min.js"></script>
+    <script src="../_js/bootstrap.min.js"></script>
+    <style>
+        div {
+            background-color: rgb(51, 109, 132);
+        }
+
+        .p1 {
+            float: left;
+        }
+
+        .demo {
+            width: 70px;
+            height: 70px;
+        }
+
+        #Img1 {
+           opacity: 0.7; 
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 上面的選單 -->
+    <div class="container-fluid ">
+        <div class="row">
+
+            <div class="col-2 ">
+                <img src="../_image/meng-0526.png" class="img-fluid">
+
+            </div>
+
+            <div class="col-2 "></div>
+
+            <div class="col-8 ">
+
+                <div>
+                    <!-- 目錄 -->
+                    <p class="p1">簡介About Me</p>
+                    <p class="p1">經歷 Education / Work Experience</p>
+                    <p class="p1">技能 PROFESSIONAL</p>
+                    <p class="p1">作品集 PORTFOLIO</p>
+                    <p class="p1">預約面試</p>
+                    <p class="p1">聯絡資訊 Contact Me</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner底圖 -->
+    <div >
+        <img id="Img1" src="../_image/0525-3.jpg" class="img-fluid">
+        <p class="text-left">
+            鍾孟穎<br>
+            <small>Zhong Meng-Ying</small> <br>
+
+            <br>
+            憑著一股衝勁<br>
+            跨出舒適圈<br>
+            踏進網頁工程的領域<br>
+            先建一個個人網站來看看~<br>
+        </p>
+    </div>
+
+
+
+
+
+    <div class="container-fluid">
+        <!-- 關於我 -->
+        <div>
+            <img src="../_image/0525-2.jpg" class="rounded-circle img-thumbnail" width="250" height="250">
+
+        </div>
+
+        <div>
+            <!-- 面試資訊 -->
+            <label>公司名稱:
+                <input required>
+            </label>
+
+            <form action="/action_page.php">
+                <label for="phone">聯絡電話:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+            </form>
+            <input type="submit">
+        </div>
+
+    </div>
+
+    <!-- 10. .container 和 .container-fluid 的差異  -->
+
+</body>
+
+</html>
